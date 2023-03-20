@@ -1,16 +1,42 @@
-# Getting Started with Create React App
+# Interview test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Build a twitch-like chat with socket.io
 
-## Available Scripts
+## Commands
+### Start projetct
+```shell
+yarn start
+```
 
-In the project directory, you can run:
+### Run tests
+```shell
+yarn test
+```
 
-### `npm start`
+### Run lint
+```shell
+yarn lint
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Mockup
+![alt text](./twitch-chat.jpg)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## TODO ❌✔️
+✔️ Clone project  
+✔️ Mockup Twitch  
+✔️ Install typescript  
+✔️ Install and configure eslint/prettier  
+✔️ Install styled-components  
+✔️ Project structure  
+✔️ Components
+  - ChatContainer
+  - ChatMessage
+  - ChatInput
+  - ChatButton  
 
+✔️ Hooks
+  - useSocketIO
+
+✔️ Unit tests  
+❌ ENHANCEMENT: Show time of message  
+❌ ENHANCEMENT: Scroll to bottom on every new message  
