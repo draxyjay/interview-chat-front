@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 
-const ButtonContainer = styled.div`
-  text-align: right;
-  width: 100%;
-`;
-
 const Button = styled.button`
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -25,10 +20,8 @@ const Button = styled.button`
 
 export const ChatButton = () => {
   return (
-    <ButtonContainer>
-      <Button role="chat-button" type="submit">
-        Send
-      </Button>
-    </ButtonContainer>
+    <Button role="chat-button" type="submit">
+      Send
+    </Button>
   );
 };

@@ -6,6 +6,7 @@ import { User } from '../models/User';
 import { ChatBox } from './ChatBox';
 import { ChatButton } from './ChatButton';
 import { ChatInput } from './ChatInput';
+import { ChatToggle } from './ChatToggle';
 
 const Container = styled.main`
   width: 300px;
@@ -15,6 +16,12 @@ const Container = styled.main`
   display: flex;
   flex-direction: column;
   gap: 10px;
+`;
+
+const ActionsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 interface Props {
@@ -27,6 +34,7 @@ interface Props {
 export const ChatContainer: React.FC<Props> = ({ wsConfig, currentUser }) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [formData, setFormData] = useState({ message: '' });
+  const [displayTimestamp, setDisplayTimestamp] = useState(false);
 
   const updateMessages = (msg: Message) => {
     setMessages(oldMsg => [...oldMsg, msg]);
@@ -57,12 +65,22 @@ export const ChatContainer: React.FC<Props> = ({ wsConfig, currentUser }) => {
     setFormData({ message: '' });
   };
 
+  const toggleTimestamp = () => setDisplayTimestamp(v => !v);
+
   return (
     <Container>
-      <ChatBox messages={messages} />
+      <ChatBox messages={messages} displayTimestamp={displayTimestamp} />
       <form id="chat-form" onChange={handleChange} onSubmit={handleSubmit}>
         <ChatInput id="message" name="message" placeholder="Message..." value={formData.message} />
-        <ChatButton />
+        <ActionsContainer>
+          <ChatToggle
+            id="toggle-timestamp"
+            label="Horodatage"
+            value={displayTimestamp}
+            onChange={toggleTimestamp}
+          />
+          <ChatButton />
+        </ActionsContainer>
       </form>
     </Container>
   );

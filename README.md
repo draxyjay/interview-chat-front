@@ -38,5 +38,6 @@ yarn lint
   - useSocketIO
 
 ✔️ Unit tests  
-❌ ENHANCEMENT: Show time of message  
+✔️ ENHANCEMENT: Show time of message  
 ❌ ENHANCEMENT: Scroll to bottom on every new message  
+❌ ENHANCEMENT: App context for user, displayTimestamp, ...  

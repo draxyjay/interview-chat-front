@@ -11,12 +11,19 @@ const Box = styled.div`
 
 interface Props {
   messages: Message[];
+  displayTimestamp: boolean;
 }
-export const ChatBox: React.FC<Props> = ({ messages }) => {
+export const ChatBox: React.FC<Props> = ({ messages, displayTimestamp }) => {
   return (
     <Box id="chat-box" role="chat-box">
       {messages.map(({ user, text, date }) => (
-        <ChatMessage key={user + date.toString()} user={user} text={text} />
+        <ChatMessage
+          key={user + date.toString()}
+          user={user}
+          text={text}
+          date={date}
+          displayTimestamp={displayTimestamp}
+        />
       ))}
     </Box>
   );
